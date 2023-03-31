@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.        
 class HomeMotivation(models.Model):
@@ -41,6 +42,9 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.titel
+    
+    def get_absolute_url(self):
+        return reverse("article_details", kwargs={"slug": self.slug})
     
     class Meta:
         verbose_name = 'Blog'
