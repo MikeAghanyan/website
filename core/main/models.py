@@ -45,3 +45,15 @@ class Blog(models.Model):
     class Meta:
         verbose_name = 'Blog'
         verbose_name_plural = 'Blog'
+
+class My(models.Model):
+    img = models.ImageField('My img', upload_to='media/my')
+    titel = models.CharField('Blog titel', max_length=30)
+    descr = models.TextField('Blog description', max_length=1500)
+
+    def __str__ (self):
+        return self.titel
+    
+    class Meta:
+        verbose_name = 'My'
+        verbose_name_plural = 'My'

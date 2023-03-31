@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="left-menu text-right menu-1">
                     <ul>
-                        <li><a href="statii/">БЛОГ</a></li>
+                        <li><a href="{% url 'blog' %}">БЛОГ</a></li>
                         <li class="has-dropdown">
                             <a href="uslugi/">УСЛУГИ</a>
                             <ul class="dropdown">
@@ -64,27 +64,13 @@
                                 <li><a href="portfolio/atelier-art">Услуги ателье</a></li>
                             </ul>
                         </li>
-                        <li><a href="kontakty">КОНТАКТЫ</a></li>
+                        <li><a href="kontakty">Контакты</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
-    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(../../static/images/banner-main.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 text-center">
-                    <div class="display-t">
-                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1 style="font-family: fantasy">САЙТ ПОРТФОЛИО</h1>
-                            <h3 style="font-family: cursive"><a href="obo-mne/" style="color: whitesmoke"> Начинающий разработчик - Саруханов Михаил</a> </h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    {% block header %} {% endblock %}
 <body>
     {% block body %}{% endblock %}
 </body>

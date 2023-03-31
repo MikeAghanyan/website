@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import HomeMotivation, Project, Blog, Service
+from .models import HomeMotivation, Project, Blog, Service, My
 
 # Create your views here.
 
@@ -17,4 +17,15 @@ class HomeListView(ListView):
             'service':service,
             'project':project,
             'blog':blog,
+        })
+    
+class BlogListView(ListView):
+    template_name='blog/index.html'
+
+    def get(self, request):
+        article_list = Blog.objects.all()
+        my_list = My.objects.all()
+        return render(request, self.template_name, {
+            'article_list':article_list,
+            'my_list':my_list,
         })
