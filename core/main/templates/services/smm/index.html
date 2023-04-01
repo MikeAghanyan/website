@@ -1,74 +1,7 @@
-<!DOCTYPE HTML>
-<html lang="ru">
+{% extends 'main/base.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Услуги ~ Портфолио Михаила. Создание сайтов, дизайн и продвижение</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Услуги. SMM и SEO продвижение. Портфолио Михаила. Создание сайта, уникальный дизайн, продвижение и SMM. Создание сайтов,  онлайн-магазинов, интернет-магазинов, корпоративных сайтов с помощью Bootstrap, HTML5, CSS3. ДАВАЙТЕ ПОКОРЯТЬ НОВЫЕ ВЕРШИНЫ ВМЕСТЕ!" />
-    <meta name="keywords" content="SMM, продвижение сайта, SEO продвижение сайта, правильный маркетинг" />
-    <meta property="og:title" content="Услуги ~ Портфолио Михаила. Создание сайтов, дизайн и продвижение" />
-    <meta property="og:image" content="https://start-saitov.ru/portfolio/portfolio-mike/images/banner-main-og.jpg" />
-    <meta property="og:url" content="start-saitov.ru/portfolio/portfolio-mike/" />
-    <meta property="og:site_name" content="SMM и SEO продвижение" />
-    <meta property="og:description" content="Услуги. SMM и SEO продвижение. Портфолио Михаила. Создание сайта, уникальный дизайн, продвижение и SMM. Создание сайтов,  онлайн-магазинов, интернет-магазинов, корпоративных сайтов с помощью Bootstrap, HTML5, CSS3. ДАВАЙТЕ ПОКОРЯТЬ НОВЫЕ ВЕРШИНЫ ВМЕСТЕ!" />
-    <meta name="twitter:title" content="Услуги ~ SMM и SEO продвижение. Портфолио Михаила. Создание сайтов, дизайн и продвижение" />
-    <meta name="twitter:image" content="https://start-saitov.ru/portfolio/portfolio-mike/images/banner-main-og.jpg" />
-    <meta name="twitter:url" content="start-saitov.ru/portfolio/portfolio-mike/" />
-    <meta name="twitter:card" content="sumary" />
-    <link rel="shortcut icon" href="../../images/logo/notebook.png">
-    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/animate.css">
-    <link rel="stylesheet" href="../../css/icomoon.css">
-    <link rel="stylesheet" href="../../css/bootstrap.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <script src="../../js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-	<script src="../../js/respond.min.js"></script>
-	<![endif]-->
-</head>
 
-<body>
-    <div class="fh5co-loader"></div>
-    <div id="page">
-        <nav class="fh5co-nav" role="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="left-menu text-right menu-1">
-                        <ul>
-                            <li><a href="../../obo-mne">ОБО МНЕ</a></li>
-                            <li class="has-dropdown active">
-                                <a href="..">УСЛУГИ</a>
-                                <ul class="dropdown">
-                                    <li><a href="../sozdanie-sajtov">Создание сайтов</a></li>
-                                    <li><a href="../internet-magazin">Сайт-магазин</a></li>
-                                    <li><a href="#0">SMM</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="logo text-center">
-                        <div id="fh5co-logo"><a href="../../">M I K E</a></div>
-                    </div>
-                    <div class="right-menu text-left menu-1">
-                        <ul>
-                            <li class="has-dropdown">
-                                <a href="../../portfolio">ПОРТФОЛИО</a>
-                                <ul class="dropdown">
-                                    <li><a href="portfolio/bk-25">Инфо-сайт дома</a></li>
-                                    <li><a href="portfolio/mobile-decor">Магазин чехлов</a></li>
-                                    <li><a href="portfolio/atelier-art">Услуги ателье</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="../../kontakty">КОНТАКТЫ</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
+{% block body %}
         <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(../../images/banner-social-media.jpg);">
             <div class="overlay"></div>
             <div class="container">
@@ -88,69 +21,30 @@
             <div class="container">
                 <div class="about-content">
                     <div class="row animate-box">
+                        {% for i in 'service_details' %}
                         <div class="col-md-6">
                             <div class="desc">
-                                <h3>Таргетинговая реклама &amp; социальные сети </h3>
-                                <p>SMM аббревиатура появилась от сокращения — Social Media Marketing, то есть маркетинг в социальных сетях. Цель SMM — продвижение бренда, формирования имиджа, повышение трафика на сайт, лидогенерация и увеличение продаж через социальные сети.</p>
-                                <p>ВКонтакте, Facebook, Twitter и Instagram настолько вошли в повседневную жизнь, что теперь многие полагаются только на них при поиске полезной и достоверной информации. Если Ваша компания будет часто упоминаться в социальных сетях, расширение аудитории Вам гарантировано. Новая аудитория это отлично, однако нам нужна и важнейшая целевая аудитория!</p>
-                                <p>Мы разберёмся, как Ваша целевая аудитория, про которую Вы наверняка задумались еще на этапе открытия собственного дела, выглядит в пространстве соцсетей. Как Ваши потенциальные клиенты используют инстаграм, фейсбук и твиттер? А они вообще используют твиттер? Может быть вместо него их любимая соцсеть это ТикТок? Например, ваша ЦА наиболее активна и широко представлена в инстаграм. Тогда сосредоточим силы на изображениях, а в посты будем писать вспомогательный текст, который поможет понять суть изображения или объяснит заголовок.
-                                </p>
+                                <h3>{{ i.titel }}</h3>
+                                <p>{{ i.text1 }}</p>          
+                                <p>{{ i.text2 }}</p>                                
+                                <p>{{ i.text3 }}</p>                                
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img class="img-responsive" src="../../images/smm-orange.jpg" alt="social-media-promotion">
-                        </div>
-                    </div>
-                    <div class="row animate-box">
+                            <img class="img-responsive" src="{{ i.img1.url}}"g alt="{{i.titel }}">
+                        </div>                    
                         <div class="col-md-6">
-                            <img class="img-responsive" src="../../images/main-smm.jpg" alt="social-media-content">
+                            <img class="img-responsive" src="{{ i.img2.url}}" alt="{{i.titel }}">
                         </div>
                         <br>
                         <div class="col-md-6">
                             <div class="desc">
-                                <h3>Создадим бизнес-аккаунт</h3>
-                                <p>Самое время сделать бизнес-страницу. Такие аккаунты имеют больше инструментов, полезных для развития бизнеса, отслеживания статистики,оптимизации рекламных кампаний и много другого. Встроенная аналитика и инструменты рекламы — это отличные возможности для повышения узнаваемости бренда. Вы можете таргетировать определенные товары на более узкую, но при этом более релевантную, что сохранит бюджет и поднимет продажи. Вот список бизнес-инструментов от популярных соцсетей:Facebook для business, Instagram для business, Twitter для business, LinkedIn для business, TikTok для business.</p>
+                                <p>{{ i.text4 }}</p>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
-        <footer  role="contentinfo" style="background-color: #1d1616">
-        <div class="row animate-box">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                <h2 style="color: #ec281f">Создадим сайт мечты - вместе!</h2>
-                <h3 style="color: #ec281f">Оставить заявку на создание и продвижение сайта - <a style="font-family: serif; font-size: 1.3em; color: deepskyblue" href="kontakty/">ЗДЕСЬ!</a></h3>
-            </div>
-                <div class="row copyright">
-                    <div class="col-md-12 text-center">
-                        <small class="block" style="color: floralwhite">&copy; 2022 Все права защищены.</small>
-                        <small class="block" style="color: floralwhite">&reg; Саруханов Михаил. Demo Images: <a href="https://pixabay.com/ru/" target="_blank" style="color: deepskyblue">Pixabay</a></small>
-                        <ul class="fh5co-social-icons">
-                            <li><a href="https://www.facebook.com/mikhail.aganyan" target="_blank"> <i class="icon-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/in.sadness.side/" target="_blank"> <i class="icon-instagram"></i></a></li>
-                            <li><a href="https://vk.com/prosaruhan"><i class="icon-vk" target="_blank"> </i></a></li>
-                            <li><a href="https://www.pinterest.ru/kAtS_Mike/_saved/" target="_blank"> <i class="icon-pinterest"></i></a></li>
-                            <li><a href="https://wa.me/79776406177" target="_blank"> <i class="icon-phone"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-    </div>
-    <!-- jQuery -->
-    <script src="../../js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="../../js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="../../js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
-    <script src="../../js/jquery.waypoints.min.js"></script>
-    <!-- Main -->
-    <script src="../../js/main.js"></script>
-</body>
-
-</html>
+{% endblock %}

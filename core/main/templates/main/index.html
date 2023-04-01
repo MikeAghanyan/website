@@ -67,7 +67,7 @@
                     {% for i in services %}
                     <div class="col-lg-4 col-md-4 animate-box">
                         <h4 style="font-family: cursive">{{ i.titel }}</h4>
-                        <img class="img-responsive" src="{{ i.img.url }}" alt="лендинг, smm и seo продвижение, онлайн магазин">
+                        <img class="img-responsive" src="{{ i.img_main.url }}" alt="лендинг, smm и seo продвижение, онлайн магазин">
                         <p style="font-style: italic">{{ i.descr }}</p>
                         <a class="btn btn-warning" href="{% url 'service_details' i.slug %}" style="color: aliceblue">Подробнее</a>
                     </div>
