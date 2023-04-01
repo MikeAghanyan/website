@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import HomeMotivation, Project, Blog, Service, My
+from .models import HomeMotivation, Project, Blog, Services, My
 # Register your models here.
-@admin.register(HomeMotivation, Project, Blog, Service, My)
+@admin.register(HomeMotivation, Project, Blog, Services, My)
 class MainPage(admin.ModelAdmin):
     list_display = ['id', 'titel']
     list_display_links = ['id', 'titel']

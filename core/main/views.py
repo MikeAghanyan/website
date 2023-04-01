@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import HomeMotivation, Project, Blog, Service, My
+from .models import HomeMotivation, Project, Blog, My, Services
 
 # Create your views here.
 
@@ -9,12 +9,12 @@ class HomeListView(ListView):
 
     def get(self, request):
         home_motivation = HomeMotivation.objects.all()
-        service = Service.objects.all()
+        services = Services.objects.all()
         project = Project.objects.filter(active=True)
         blog = Blog.objects.filter(active=True)
         return render(request, self.template_name, {
             'home_motivation':home_motivation,
-            'service':service,
+            'services':services,
             'project':project,
             'blog':blog,
         })
@@ -38,3 +38,21 @@ class ArticleDetailView(DetailView):
         return render(request, self.template_name, {
             'article_details':article_details,
         }) 
+
+class ServicesListView(ListView):
+    template_name='services/index.html'
+
+    def get(self, request):
+        services_list = Services.objects.all()
+        return render(request, self.template_name, {
+            'services_list':services_list,
+        })
+            
+class ServicesDetailView(DetailView):
+    template_name='Services/smm/index.html'
+
+    def get(self, request, slug):
+        service_details = Services.objects.get(slug=slug)
+        return render(request, self.template_name, {
+            'service_details':service_details,
+        })

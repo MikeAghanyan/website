@@ -21,17 +21,33 @@ class Project(models.Model):
     def __str__(self):
         return self.titel
     
-class Service(models.Model):
-    titel = models.CharField('Service titel', max_length=30)
-    img = models.ImageField('Service image', upload_to='media/service')
-    descr = models.CharField('Service description', max_length=300)
-    slug = models.SlugField('Service link', unique=True)
+class Services(models.Model):
+    titel = models.CharField('Services titel', max_length=30)
+    img_main = models.ImageField('Services image', upload_to='media/service')
+    descr = models.CharField('Services description', max_length=300)
+    slug = models.SlugField('Services link', unique=True)
+    text1= models.TextField('Services text1', blank=True)
+    text2= models.TextField('Services text2', blank=True)
+    text3= models.TextField('Services text3', blank=True)
+    text4= models.TextField('Services text4', blank=True)
+    text5= models.TextField('Services text5', blank=True)
+    text6= models.TextField('Services text6', blank=True)
+    img_1 = models.ImageField('Services image1', upload_to='media/service', blank=True)
+    img_2= models.ImageField('Services image2', upload_to='media/service', blank=True)
+    img_3= models.ImageField('Services image3', upload_to='media/service', blank=True)
 
     def __str__(self):
         return self.titel
     
+    def get_absolute_url(self):
+        return reverse("service_details", kwargs={"slug": self.slug})
+    
+    class Meta:
+        verbose_name = 'Services'
+        verbose_name_plural = 'Services'
+
 class Blog(models.Model):
-    titel = models.CharField('Blog titel', max_length=30)
+    titel = models.CharField('Blog titel', max_length=60)
     img = models.ImageField('Blog image', upload_to='media/blog')
     descr = models.CharField('Blog description', max_length=300)
     date = models.DateField('Blog release time')
@@ -61,3 +77,4 @@ class My(models.Model):
     class Meta:
         verbose_name = 'My'
         verbose_name_plural = 'My'
+

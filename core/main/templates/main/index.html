@@ -64,12 +64,12 @@
                         <h2>Услуги</h2>
                         <p style="font-style: italic">как сделать Ваш бизнесс более заметным, востребованным и современным</p>
                     </div>
-                    {% for i in service %}
+                    {% for i in services %}
                     <div class="col-lg-4 col-md-4 animate-box">
                         <h4 style="font-family: cursive">{{ i.titel }}</h4>
                         <img class="img-responsive" src="{{ i.img.url }}" alt="лендинг, smm и seo продвижение, онлайн магазин">
                         <p style="font-style: italic">{{ i.descr }}</p>
-                        <a class="btn btn-warning" href="uslugi/smm/" style="color: aliceblue">Подробнее</a>
+                        <a class="btn btn-warning" href="{% url 'service_details' i.slug %}" style="color: aliceblue">Подробнее</a>
                     </div>
                     {% endfor %}
                 </div>
