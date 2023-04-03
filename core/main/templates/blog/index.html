@@ -8,13 +8,13 @@
                     {% for i in article_list %}
                     <div class="col-lg-4 col-md-4">
                         <div class="fh5co-blog animate-box fadeInUp animated-fast">
-                            <a href="{% url 'article' i.slug %}"><img class="img-responsive" src="{{ i.img.url }}" alt="С чего начинаеться безопастность?"></a>
+                            <a href"><img class="img-responsive" src="{{ i.img.url }}" alt="С чего начинаеться безопастность?"></a>
                             <div class="blog-text">
-                                <h3 style="font-family: sans-serif"><a href="{% url 'article' i.slug %}">{{ i.titel }}</a></h3>
+                                <h3 style="font-family: sans-serif"><a href">{{ i.titel }}</a></h3>
                                 <span class="posted_on">{{ i.date }}</span>
                                 <span class="comment"><a href="">{{ i.time }} min<i class="icon-clock"></i></a></span>
                                 <p style="font-family: serif">{{ i.descr }}</p>
-                                <a href="{% url 'article' i.slug %}">Читать далее</a>
+                                <a href="">Читать далее</a>
                             </div>
                         </div>
                     </div>

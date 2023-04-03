@@ -21,17 +21,18 @@
             <div class="container">
                 <div class="about-content">
                     <div class="row animate-box">
-                        {% for i in 'service_details' %}
+                        {% for i in service_all %}
+                            {% for j in i.service_name.id %}
                         <div class="col-md-6">
                             <div class="desc">
-                                <h3>{{ i.titel }}</h3>
-                                <p>{{ i.text1 }}</p>          
+                                <h3>{{ j.titel }}</h3>
+                                <p>{{ j.text1 }}</p>          
                                 <p>{{ i.text2 }}</p>                                
                                 <p>{{ i.text3 }}</p>                                
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img class="img-responsive" src="{{ i.img1.url}}"g alt="{{i.titel }}">
+                            <img class="img-responsive" src="{{ j.img1.url}}"g alt="{{i.titel }}">
                         </div>                    
                         <div class="col-md-6">
                             <img class="img-responsive" src="{{ i.img2.url}}" alt="{{i.titel }}">
@@ -42,6 +43,7 @@
                                 <p>{{ i.text4 }}</p>
                             </div>
                         </div>
+                        {% endfor %}
                         {% endfor %}
                     </div>
                 </div>
