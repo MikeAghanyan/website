@@ -51,8 +51,11 @@ class ServicesListView(ListView):
 class ServicesDetailView(DetailView):
     template_name='services/smm/index.html'
 
-    def get(self, request, slug):
+    def get(self, request, slug, id):
         service_all = ServicesAll.objects.get(slug=slug)
+        service_list = Services.objects.filter(pk=id)
         return render(request, self.template_name, {
-            'service_all':service_all,
+                        'id':id,
+                      'service_all':service_all,
+                      'service_list':service_list,
         })

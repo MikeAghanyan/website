@@ -34,6 +34,10 @@ class ServicesAll(models.Model):
     class Meta:
         verbose_name = 'ServisesAll'
         verbose_name_plural = 'ServicesAll'
+        
+    def get_absolute_url(self):
+        return reverse("service_details", kwargs={"slug": self.slug})
+    
 
 class Services(models.Model):
     titel = models.CharField('Services titel', max_length=30)
@@ -46,14 +50,11 @@ class Services(models.Model):
     img_1 = models.ImageField('Services image1', upload_to='media/service', blank=True)
     img_2= models.ImageField('Services image2', upload_to='media/service', blank=True)
     img_3= models.ImageField('Services image3', upload_to='media/service', blank=True)
-    service_name = models.ForeignKey(ServicesAll, on_delete=models.CASCADE, related_name='services')
+    service_name = models.ForeignKey(ServicesAll, on_delete=models.CASCADE, related_name='serv')
 
 
     def __str__(self):
         return self.titel
-    
-    def get_absolute_url(self):
-        return reverse("service_details", kwargs={"slug": self.slug})
     
     class Meta:
         verbose_name = 'Services'

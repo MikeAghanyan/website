@@ -20,9 +20,10 @@
         <div id="fh5co-about">
             <div class="container">
                 <div class="about-content">
+                    
                     <div class="row animate-box">
-                        {% for i in service_all %}
-                            {% for j in i.service_name.id %}
+                        {% for i in service_list %}
+                            {% for j in i.serv.all %}
                         <div class="col-md-6">
                             <div class="desc">
                                 <h3>{{ j.titel }}</h3>
@@ -44,8 +45,9 @@
                             </div>
                         </div>
                         {% endfor %}
-                        {% endfor %}
+                    {% endfor %}
                     </div>
+                    
                 </div>
             </div>
         </div>
