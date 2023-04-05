@@ -29,19 +29,17 @@
                     </div>
                     </div>
                     <br>
-                    {% for i in services_list %}
-
-
-                    <div class="col-lg-4 col-md-4" style="background-color: #ffb744; border-color: floralwhite; border-style:solid">
-                        <div class="fh5co-blog animate-box">
-                            <a><img src="{{ i.img_main.url }}" alt="{{ i.name }}"></a>
-                            <div class="blog-text">
-                                <h3><a href="" >{{ i.name }}</a></h3>
-                                <p>{{ i.descr }}</p>
-                                <a href="{% url 'service_details' i.slug %}" class="btn btn-primary">Больше тут</a>
+                    {% for i in service_list %}
+                        <div class="col-lg-4 col-md-4" style="background-color: #ffb744; border-color: floralwhite; border-style:solid">
+                            <div class="fh5co-blog animate-box">
+                                <a><img src="{{ i.img_main.url }}" alt="{{ i.name }}"></a>
+                                <div class="blog-text">
+                                    <h3><a href="{{ i.link }}" >{{ i.name }}</a></h3>
+                                    <p>{{ i.descr }}</p>
+                                    <a href="{{ i.link }}" class="btn btn-primary">Больше тут</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     {% endfor %}
                 </div>
             </div>

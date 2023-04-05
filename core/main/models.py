@@ -2,6 +2,14 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.        
+
+# class CV(models.Model):
+#     titel = models.CharField('CV titel', max_length=30)
+#     cv = models.FileField('CV file', upload_to='media')
+
+#     def __str__(self):
+#         return self.titel
+
 class HomeMotivation(models.Model):
     titel = models.CharField('HomeMotivation titel', max_length=30)
     icon = models.CharField('HomeMotivation icon', max_length=30)
@@ -9,95 +17,87 @@ class HomeMotivation(models.Model):
 
     def __str__(self):
         return self.titel
-
-class Project(models.Model):
-    titel = models.CharField('Project titel', max_length=30)
-    img = models.ImageField('Project image', upload_to='media/porfolio')
-    descr = models.CharField('Project description', max_length=55)
-    slug = models.SlugField('Project link', unique=True, blank=True)
-    active = models.BooleanField('Project active')
-
-
-    def __str__(self):
-        return self.titel
     
-class ServicesAll(models.Model):
-    name = models.CharField('ServisesAll name', max_length=30)   
-    slug = models.SlugField('ServicesAll link', unique=True, blank=True)
-    img_main = models.ImageField('ServicessAll image', upload_to='media/service', blank=True)
-    descr = models.CharField('ServicessAll description', max_length=300, blank=True)
-
+class ProjectCategory(models.Model):
+    name = models.CharField('ProjectCategory name', max_length=30)   
+    descr = models.TextField('ProjectCaregory description', max_length=1500, blank=True)
+    img_main = models.ImageField('ProjectCategory image', upload_to='media', blank=True)
+    link = models.CharField('Article link', max_length=1000, blank=True)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = 'ServisesAll'
-        verbose_name_plural = 'ServicesAll'
+        verbose_name = 'ProjectCategory'
+        verbose_name_plural = 'ProjectCategories'
+
+class ServiceCategory(models.Model):
+    name = models.CharField('ServiceCategory name', max_length=30)       
+    descr = models.TextField('ServiceCaregory description', max_length=1500, blank=True)
+    img_main = models.ImageField('ServiceCategory image', upload_to='media/Service_category', blank=True)
+    link = models.CharField('Article link', max_length=1000, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'ServiceCategory'
+        verbose_name_plural = 'ServiceCategories'
+
+class BlogCategory(models.Model):
+    name = models.CharField('BlogCategory name', max_length=60)   
+    active = models.BooleanField('Blog active', blank=True)
+    descr = models.TextField('BlogCaregory description', max_length=1500, blank=True)
+    img_main = models.ImageField('BlogCategory image', upload_to='media/Blog_category', blank=True)
+    date = models.DateField('BlogCategory release time', blank=True)
+    time = models.CharField('BlogCategory reading time', blank=True, max_length=2)
+    link = models.CharField('Article link', max_length=1000, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'BlogCategory'
+        verbose_name_plural = 'BlogCategories'
         
-    def get_absolute_url(self):
-        return reverse("service_details", kwargs={"slug": self.slug})
-    
-
-class Services(models.Model):
-    titel = models.CharField('Services titel', max_length=30)
-    text1= models.TextField('Services text1', blank=True)
-    text2= models.TextField('Services text2', blank=True)
-    text3= models.TextField('Services text3', blank=True)
-    text4= models.TextField('Services text4', blank=True)
-    text5= models.TextField('Services text5', blank=True)
-    text6= models.TextField('Services text6', blank=True)
-    img_1 = models.ImageField('Services image1', upload_to='media/service', blank=True)
-    img_2= models.ImageField('Services image2', upload_to='media/service', blank=True)
-    img_3= models.ImageField('Services image3', upload_to='media/service', blank=True)
-    service_name = models.ForeignKey(ServicesAll, on_delete=models.CASCADE, related_name='serv')
-
+class SubServiceCategory(models.Model):
+    category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, related_name='service_categ')
+    slug = models.SlugField('SubServiceCategory link', unique=True, blank=True)
+    titel = models.CharField('SubServiceCategory titel', max_length=30)
+    text1= models.TextField('SubServiceCategory text1', blank=True)
+    text2= models.TextField('SubServiceCategory text2', blank=True)
+    text3= models.TextField('SubServiceCategory text3', blank=True)
+    text4= models.TextField('SubServiceCategory text4', blank=True)
+    text5= models.TextField('SubServiceCategory text5', blank=True)
+    text6= models.TextField('SubServiceCategory text6', blank=True)
+    img_1 = models.ImageField('SubServiceCategory image1', upload_to='media/Service_category', blank=True)
+    img_2= models.ImageField('SubServiceCategory image2', upload_to='media/Service_category', blank=True)
+    img_3= models.ImageField('SubServiceCategory image3', upload_to='media/Service_category', blank=True)
 
     def __str__(self):
         return self.titel
     
     class Meta:
-        verbose_name = 'Services'
-        verbose_name_plural = 'Services'
+        verbose_name = 'SubServiceCategory'
+        verbose_name_plural = 'SubServiceCategory'
 
-class Blog(models.Model):
+class SubBlogCategory(models.Model):
+    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE, related_name='blog_categ')
+    slug = models.SlugField('SubBlogCategory link', unique=True, blank=True)
+    titel = models.CharField('SubBlogCategory titel', max_length=30)
+    text1= models.TextField('SubBlogCategory text1', blank=True)
+    text2= models.TextField('SubBlogCategory text2', blank=True)
+    text3= models.TextField('SubBlogCategory text3', blank=True)
+    text4= models.TextField('SubBlogCategory text4', blank=True)
+    text5= models.TextField('SubBlogCategory text5', blank=True)
+    text6= models.TextField('SubBlogCategory text6', blank=True)
+    img_1 = models.ImageField('SubBlogCategory image1', upload_to='media/Blog_category', blank=True)
+    img_2= models.ImageField('SubBlogCategory image2', upload_to='media/Blog_category', blank=True)
+    img_3= models.ImageField('SubBlogCategory image3', upload_to='media/Blog_category', blank=True)
     
-    titel = models.CharField('Blog titel', max_length=60)
-    img = models.ImageField('Blog image', upload_to='media/blog')
-    descr = models.CharField('Blog description', max_length=300)
-    date = models.DateField('Blog release time')
-    time = models.CharField('Blog reading time', max_length=2)
-    active = models.BooleanField('Blog active')
-    img1 = models.ImageField('Blog image', upload_to='media/blog', blank=True)
-    img2 = models.ImageField('Blog image', upload_to='media/blog', blank=True)
-    text1= models.TextField('Blog text1', blank=True)
-    text2= models.TextField('Blog text2', blank=True)
-    text3= models.TextField('Blog text3', blank=True)
-    text4= models.TextField('Blog text4', blank=True)
-    text5= models.TextField('Blog text5', blank=True)
-    text6= models.TextField('Blog text6', blank=True)
-
     def __str__(self):
         return self.titel
     
     class Meta:
-        verbose_name = 'Blog'
-        verbose_name_plural = 'Blog'
-
-    def get_absolute_url(self):
-        return reverse("article_details", kwargs={"slug": self.slug})
-    
-class My(models.Model):
-    img = models.ImageField('My img', upload_to='media/my')
-    titel = models.CharField('Blog titel', max_length=30)
-    descr = models.TextField('Blog description', max_length=1500)
-
-    def __str__ (self):
-        return self.titel
-    
-    class Meta:
-        verbose_name = 'My'
-        verbose_name_plural = 'My'
-
-
-
+        verbose_name = 'SubBlogCategory'
+        verbose_name_plural = 'SubBlogCategories'

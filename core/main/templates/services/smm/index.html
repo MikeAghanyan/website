@@ -2,7 +2,7 @@
 
 
 {% block body %}
-        <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(../../images/banner-social-media.jpg);">
+        <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(../../../static/images/banner-social-media.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
@@ -20,34 +20,31 @@
         <div id="fh5co-about">
             <div class="container">
                 <div class="about-content">
-                    
                     <div class="row animate-box">
-                        {% for i in service_list %}
-                            {% for j in i.serv.all %}
                         <div class="col-md-6">
                             <div class="desc">
-                                <h3>{{ j.titel }}</h3>
-                                <p>{{ j.text1 }}</p>          
-                                <p>{{ i.text2 }}</p>                                
-                                <p>{{ i.text3 }}</p>                                
+                                <h3>Таргетинговая реклама &amp; социальные сети </h3>
+                                <p>SMM аббревиатура появилась от сокращения — Social Media Marketing, то есть маркетинг в социальных сетях. Цель SMM — продвижение бренда, формирования имиджа, повышение трафика на сайт, лидогенерация и увеличение продаж через социальные сети.</p>
+                                <p>ВКонтакте, Facebook, Twitter и Instagram настолько вошли в повседневную жизнь, что теперь многие полагаются только на них при поиске полезной и достоверной информации. Если Ваша компания будет часто упоминаться в социальных сетях, расширение аудитории Вам гарантировано. Новая аудитория это отлично, однако нам нужна и важнейшая целевая аудитория!</p>
+                                <p>Мы разберёмся, как Ваша целевая аудитория, про которую Вы наверняка задумались еще на этапе открытия собственного дела, выглядит в пространстве соцсетей. Как Ваши потенциальные клиенты используют инстаграм, фейсбук и твиттер? А они вообще используют твиттер? Может быть вместо него их любимая соцсеть это ТикТок? Например, ваша ЦА наиболее активна и широко представлена в инстаграм. Тогда сосредоточим силы на изображениях, а в посты будем писать вспомогательный текст, который поможет понять суть изображения или объяснит заголовок.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img class="img-responsive" src="{{ j.img1.url}}"g alt="{{i.titel }}">
-                        </div>                    
+                            <img class="img-responsive" src="../../../static/images/smm-orange.jpg" alt="social-media-promotion">
+                        </div>
+                    </div>
+                    <div class="row animate-box">
                         <div class="col-md-6">
-                            <img class="img-responsive" src="{{ i.img2.url}}" alt="{{i.titel }}">
+                            <img class="img-responsive" src="../../../static/images/main-smm.jpg" alt="social-media-content">
                         </div>
                         <br>
                         <div class="col-md-6">
                             <div class="desc">
-                                <p>{{ i.text4 }}</p>
+                                <h3>Создадим бизнес-аккаунт</h3>
+                                <p>Самое время сделать бизнес-страницу. Такие аккаунты имеют больше инструментов, полезных для развития бизнеса, отслеживания статистики,оптимизации рекламных кампаний и много другого. Встроенная аналитика и инструменты рекламы — это отличные возможности для повышения узнаваемости бренда. Вы можете таргетировать определенные товары на более узкую, но при этом более релевантную, что сохранит бюджет и поднимет продажи. Вот список бизнес-инструментов от популярных соцсетей:Facebook для business, Instagram для business, Twitter для business, LinkedIn для business, TikTok для business.</p>
                             </div>
                         </div>
-                        {% endfor %}
-                    {% endfor %}
                     </div>
-                    
                 </div>
             </div>
         </div>

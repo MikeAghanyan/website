@@ -5,16 +5,16 @@
            <div id="fh5co-blog" class="fh5co-bg-section">
             <div class="container">                
                 <div class="row">
-                    {% for i in article_list %}
+                    {% for i in blog_list %}
                     <div class="col-lg-4 col-md-4">
                         <div class="fh5co-blog animate-box fadeInUp animated-fast">
-                            <a href"><img class="img-responsive" src="{{ i.img.url }}" alt="С чего начинаеться безопастность?"></a>
+                            <a href="{{ i.link }}"><img class="img-responsive" src="{{ i.img_main.url }}" alt="С чего начинаеться безопастность?"></a>
                             <div class="blog-text">
-                                <h3 style="font-family: sans-serif"><a href">{{ i.titel }}</a></h3>
+                                <h3 style="font-family: sans-serif"><a href="{{ i.link }}">{{ i.titel }}</a></h3>
                                 <span class="posted_on">{{ i.date }}</span>
-                                <span class="comment"><a href="">{{ i.time }} min<i class="icon-clock"></i></a></span>
+                                <span class="comment">{{ i.time }} min<i class="icon-clock"></i></span>
                                 <p style="font-family: serif">{{ i.descr }}</p>
-                                <a href="">Читать далее</a>
+                                <a href="{{ i.link }}">Читать далее</a>
                             </div>
                         </div>
                     </div>
@@ -26,17 +26,17 @@
             <div class="container">
                 <div class="about-content">
                     <div class="row animate-box">
-                        {% for i in my_list %}
                         <div class="col-md-6 col-md-push-6">
                             <div class="desc">
-                                <h2 style="font-family: cursive">{{ i.titel }}</h2>
-                                <p>{{ i.descr }}</p>
+                                <h2 style="font-family: cursive">Немного обо мне</h2>
+                                <p>Меня зовут Михаил, родился в конце прошлого века. C 2022 обучаюсь веб разработке. Вёрстка сайтов, курсы программирования на Python, собрать backend на Django, базы данных, различные форумы - это только первый год, помимо дополнительного самообучения в этой сфере и около неё. Так жеб последние 5 лет занимаюсь фотографиейю Обрабатываю фото и выкладываю у себя в социальных сетях. </p>
+                                <p> Изучаю все новинки в сфере IT: от NFT и виртуальных реальности и до AI и промтинг для искуственного интелекта. Читаю книги, смотрю кино, сериалы, слушаю интелектуальные подкасты - как обычный человек. Чувство юмора имеет большое влияние на мировозрение и формирует позитивное мышление в любой ситуации, а иначе всё становиться серым.</p>
+                                <p>Сейчас стремлюсь стать квалифицированным web-разработчиком и приносить пользу человечеству. Начну я с Вас, мои дорогие, с тех, кому нужен сайт или его продвижение таргетинговой или контекстной рекламой! Всё для развития Ваших и моих планов и идей!</p>
                             </div>
                         </div>
                         <div class="col-md-6 col-md-pull-6">
-                            <img class="img-responsive" src="{{ i.img.url }}"  alt="автор сайта">
+                            <img class="img-responsive" src="../../../media/media/my/me-myself-i.jpg" alt="автор сайта">
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
             </div>

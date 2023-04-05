@@ -41,11 +41,7 @@
                 <div class="left-menu text-right menu-1">
                     <ul>
                         <li><a href="{% url 'blog' %}">БЛОГ</a></li>
-                        <li class="has-dropdown">
-                            <a href="{% url 'services' %}">УСЛУГИ</a>
-                            <ul class="dropdown">
-                            </ul>
-                        </li>
+                        <li class="has-dropdown"><a href="{% url 'services' %}">УСЛУГИ</a></li>
                     </ul>
                 </div>
                 <div class="logo text-center">
@@ -53,14 +49,7 @@
                 </div>
                 <div class="right-menu text-left menu-1">
                     <ul>
-                        <li class="has-dropdown">
-                            <a href="projects/">Проекты</a>
-                            <ul class="dropdown">
-                                <li><a href="portfolio/bk-25">Инфо-сайт дома</a></li>
-                                <li><a href="portfolio/mobile-decor">Магазин чехлов</a></li>
-                                <li><a href="portfolio/atelier-art">Услуги ателье</a></li>
-                            </ul>
-                        </li>
+                        <li class="has-dropdown"><a href="{% url 'projects' %}">ПРОЕКТЫ</a></li>
                         <li><a href="{% url 'contactus' %}">КОНТАКТЫ</a></li>
                     </ul>
                 </div>
@@ -76,7 +65,7 @@
             <div class="col-md-2 col-sm-4 col-xs-6">
                 <ul class="">
                     <li><a href="{% url 'services' %}">Услуги</a></li>
-                    <li><a href="#">Проекты</a></li>
+                    <li><a href="{% url 'projects' %}">Проекты</a></li>
                     
                 </ul>
             </div>
@@ -88,8 +77,8 @@
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
                 <ul class="">
-                    <li><a href="#">Резюме</a></li>
-                    <li><a href="{% url 'blog'  %}">Познакомимся!</a></li>
+                    <li><a href="{% url 'cv' %}"></a></li>
+                    <li><a href=""></a></li>
                 </ul>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12 col-md-push-1 text-center">
